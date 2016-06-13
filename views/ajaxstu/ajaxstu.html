@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.0.0-rc1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("a").click(function(event) {
+                $("#colorMe").attr("class", $(this).attr("id"));
+                event.preventDefault();
+            });
+            $("a").hover(function() {
+                $(this).css({
+                    "color": $(this).attr("id"),
+                    "background-color": "silver"
+                });
+            });
+            $("a").mouseout(function() {
+                $(this).css({
+                    "color": "white",
+                    "background-color": "gray"
+                });
+            });
+        });
+    </script>
+    <style type="text/css">
+        a {
+            display: block;
+            padding: 10px;
+            float: left;
+            margin: 10px;
+            font-weight: bold;
+            background-color: silver;
+        }
+        a:hover {
+            color: white;
+            background-color: gray;
+        }
+        .red {
+            color: red;
+        }
+        .green {
+            color: green;
+        }
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<body>
+<h1 id="colorMe">Pick a color</h1>
+<p>
+    <a id="red">Red</a>
+    <a id="green">Green</a>
+    <a id="blue">Blue</a>
+</p>
+</body>
+<button id="b01" type="button">改变内容</button>
+
+</body>
+</html>
